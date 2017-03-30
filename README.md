@@ -21,7 +21,11 @@ Installation needed:
 
 
 ### Running your project!
-Once you have your .sql and .py files set up, run the series of tests defined in this test suite using the command line 
+Once you have your .sql and .py files set up like I did in my repo, log into your VM and go to the synced folders by typing 
+```sh 
+cd /vagrant/tournament
+```
+then, run the series of tests defined in this test suite using the command line 
 ```sh
 $ python tournament_test.py 
 ```
