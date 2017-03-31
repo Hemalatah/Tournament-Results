@@ -5,11 +5,22 @@
 --
 -- You can write comments in this file by starting them with two dashes, like
 -- these lines here.
+
+-- Drop the DATABASE if its already exists to avoid duplicity
+DROP DATABASE IF EXISTS tournament;
+--Create the DATABASE
 CREATE DATABASE tournament;
+-- Connect to the DATABASE
+\c tournament;
 
-CREATE TABLE players(id serial primary key not null, name text not null);
+CREATE TABLE players(
+	id serial primary key not null, 
+	name text not null);
 
-CREATE TABLE matches(winner integer references players(id) , loser integer references players(id));
+CREATE TABLE matches(
+	id serial primary key not null,
+	winner integer references players(id) , 
+	loser integer references players(id));
 
 CREATE VIEW standings as 
 SELECT players.id, players.name,
